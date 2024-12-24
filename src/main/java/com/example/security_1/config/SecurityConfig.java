@@ -10,6 +10,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @Configuration
 public class SecurityConfig {
 
+    // 비밀번호 암호화
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -26,7 +27,7 @@ public class SecurityConfig {
                         .anyRequest().permitAll() // 그 외 모든 요청 허용
                 )
                 .formLogin(form -> form
-                        .loginPage("/login") // 커스텀 로그인 페이지 경로
+                        .loginPage("/loginForm") // 커스텀 로그인 페이지 경로
                         .loginProcessingUrl("/loginProc") // 로그인 처리 URL
                         .defaultSuccessUrl("/") // 로그인 성공 후 이동할 URL
                         .permitAll() // 로그인 관련 요청은 모두 허용
