@@ -28,7 +28,7 @@ public class SecurityConfig {
                 )
                 .formLogin(form -> form
                         .loginPage("/loginForm") // 커스텀 로그인 페이지 경로
-                        .loginProcessingUrl("/loginProc") // 로그인 처리 URL
+                        .loginProcessingUrl("/login") // 로그인 처리 URL
                         .defaultSuccessUrl("/") // 로그인 성공 후 이동할 URL
                         .permitAll() // 로그인 관련 요청은 모두 허용
                 )
